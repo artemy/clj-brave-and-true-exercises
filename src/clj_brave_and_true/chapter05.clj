@@ -10,7 +10,7 @@
 
 (c-int character)
 
-;; Excersize 1: You used (comp :intelligence :attributes) 
+;; Exercise 1: You used (comp :intelligence :attributes) 
 ;; to create a function that returns a character’s intelligence. 
 ;; Create a new function, attr, that you can call 
 ;; like (attr :intelligence) and that does the same thing.
@@ -18,7 +18,7 @@
   [key]
   (comp key :attributes))
 
-;; Excersize 2: Implement the comp function.
+;; Exercise 2: Implement the comp function.
 (defn my-comp 
   ([] identity)
   ([f] f)
@@ -31,7 +31,7 @@
   ([f g & funcs] 
    (reduce my-comp (list* f g funcs))))
 
-;; Excersize 3: Implement the assoc-in function.
+;; Exercise 3: Implement the assoc-in function.
 ;; Hint: use the assoc function and define its parameters as [m [k & ks] v].
 (defn my-assoc-in 
   [m [k & ks] v]
@@ -39,7 +39,7 @@
     (assoc m k (my-assoc-in (get m k) ks v)) 
     (assoc m k v)))
 
-;; Excersize 5: Implement update-in.
+;; Exercise 5: Implement update-in.
 (defn my-update-in 
   [m [k & ks] f & args]
   (if ks
